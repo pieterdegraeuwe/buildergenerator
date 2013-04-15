@@ -6,7 +6,8 @@
     <artifactId>entitybuildergenerator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!--github-->
+    <!--github try-->
+
     <scm>
         <connection>scm:git:git://github.com/pieterdegraeuwe/buildergenerator.git</connection>
         <url>scm:git:git://github.com/pieterdegraeuwe/buildergenerator.git</url>
