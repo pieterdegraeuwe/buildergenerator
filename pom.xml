@@ -7,9 +7,11 @@
     <version>1.0-SNAPSHOT</version>
 
 
-    <!--<scm>-->
-        <!--<connection>scm:svn:http://svn.systemworks.be/systemworks/buildergenerator/trunk</connection>-->
-    <!--</scm>-->
+    <scm>
+        <connection>scm:git:git://github.com/pieterdegraeuwe/buildergenerator.git</connection>
+        <url>scm:git:git://github.com/pieterdegraeuwe/buildergenerator.git</url>
+        <developerConnection>scm:git:git://github.com/pieterdegraeuwe/buildergenerator.git</developerConnection>
+    </scm>
 
 <!--
     <distributionManagement>
