@@ -1,0 +1,44 @@
+package ${packageName};
+import be.systemworks.buildergenerator.Builder;
+import be.systemworks.buildergenerator.BuilderDefaults;
+
+#if( ${abstract} )
+public abstract class ${className}Builder implements Builder {
+#else
+public class ${className}Builder implements Builder {
+#end
+#if( !${abstract} )
+	protected ${className} entity;
+#end
+
+#if( ${abstract} )
+#else
+	public ${className} build() {
+		return entity;
+	}
+#end
+
+#foreach($field in $fields)
+	public ${className}Builder with${field.fieldNameCapitalized}(${field.fieldType} ${field.fieldVarName}) {
+		getOrCreateEntity().set${field.fieldNameCapitalized}(${field.fieldVarName});
+		return this;
+	}
+#end
+
+	public ${className}Builder with(BuilderDefaults<${className}Builder> defaults) {
+		defaults.applyDefaults(this);
+		return this;
+	}
+
+
+#if( $abstract )
+	protected abstract ${className} getOrCreateEntity();
+#else
+	protected ${className} getOrCreateEntity() {
+		if (entity == null) {
+			entity = new ${className}();
+		}
+		return entity;
+	}
+#end
+}
